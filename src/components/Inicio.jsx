@@ -3,10 +3,7 @@ import { PruebaContext } from '../context/PruebaContext'
 
 const Inicio = () => {
 
-
-  // Si es más facil para ti puedes hacer un destructuring para y de usuario hacer otro para llegar a las propiedaddes de usuarios
   const { usuario, setUsuario } = useContext(PruebaContext)
-
 
   return (
     <div>

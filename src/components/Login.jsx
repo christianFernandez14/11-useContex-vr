@@ -8,23 +8,14 @@ const Login = () => {
 
   const gurdarDatos = e => {
     e.preventDefault()
-
-    // Verifico que estoy tomando los valores de los input, en es caso de Input - nick
-    // console.log(e.target.nick.value)
-
     let usuario_datos = {
       nick: e.target.nick.value,
       nombre: e.target.nombre.value,
       web: e.target.web.value
     }
 
-    // verifico que estoy todo los datos del objeto.
-    // console.log(usuario)
-
     setUsuario(usuario_datos)
-
   }
-
 
   return (
     <div>
