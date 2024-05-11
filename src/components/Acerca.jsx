@@ -2,7 +2,11 @@ import React from 'react'
 
 const Acerca = () => {
   return (
-    <div>Pagina de Acerca</div>
+    <div>
+      <h1>Acerca de</h1>
+      <hr />
+      <p>Pagina de información</p>
+    </div>
   )
 }
 

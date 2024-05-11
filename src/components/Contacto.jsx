@@ -2,7 +2,11 @@ import React from 'react'
 
 const Contacto = () => {
   return (
-    <div>Pagina de Contacto</div>
+    <div>
+      <h1>Contacto</h1>
+      <hr />
+      <p>Pagina de Contacto</p>
+    </div>
   )
 }
 

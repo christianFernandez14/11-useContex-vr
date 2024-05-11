@@ -2,7 +2,11 @@ import React from 'react'
 
 const Inicio = () => {
   return (
-    <div>Pagina de Inicio</div>
+    <div>
+      <h1>Inicio</h1>
+      <hr />
+      <p>Pagina de inicio</p>
+    </div>
   )
 }
 

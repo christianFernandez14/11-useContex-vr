@@ -2,7 +2,11 @@ import React from 'react'
 
 const Login = () => {
   return (
-    <div>Pagina de Login</div>
+    <div>
+      <h1>Login</h1>
+      <hr />
+      <p>Pagina de Login</p>
+    </div>
   )
 }
 
