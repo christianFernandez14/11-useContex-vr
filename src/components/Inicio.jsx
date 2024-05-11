@@ -13,7 +13,8 @@ const Inicio = () => {
       <h1>Inicio</h1>
       <hr />
       <p>Pagina de inicio</p>
-      <p>Nombre: {usuario.nombre} = www.{usuario.web}</p>
+      <p>Nombre: {usuario.nombre}</p>
+      <p>Web: {usuario.web}</p>
       {/* <p>Valor compartido: <strong>{contexto.titulo}</strong></p> */}
     </div>
   )

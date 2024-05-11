@@ -10,7 +10,7 @@ const Contacto = () => {
       <h1>Contacto</h1>
       <hr />
       <p>Pagina de Contacto</p>
-      <p>Valor compartido: <strong>{datosDesdeElContexto.contenido}</strong></p>
+      <p>Valor compartido: <strong>{JSON.stringify(datosDesdeElContexto.usuario)}</strong></p>
 
     </div>
   )

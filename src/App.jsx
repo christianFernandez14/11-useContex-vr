@@ -1,23 +1,25 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { PruebaContext } from "./context/PruebaContext"
 import AppRouter from "./routing/AppRouter"
 
 const App = () => {
 
-  // Trabajemos ahora con un estado para ponerle en dispoción en el Contex
-  const [usuario, setUsuario] = useState({
-    username: "@christianweb",
-    nombre: "Christian",
-    web: "christian.cl"
-  })
+  const [usuario, setUsuario] = useState({})
 
-  const string = 'Christian Fernandez WEB'
+  useEffect(() => {
+    console.log('USE EFFECT UNA VEZ')
+    // Se carga la primera vez el componente
+    let usuario_local = JSON.parse(localStorage.getItem("usuario"))
+    
+    setUsuario(usuario_local)
+  }, [])
+  
+  useEffect(() => {
+    console.log('USE EFFECT CUANDO HAY CAMBIOS')
+    // Esto guardara en LS, cada vez que haya un cambio ene l LS
+    localStorage.setItem("usuario", JSON.stringify(usuario))
+  }, [usuario])
 
-  const curso = {
-    id: 1,
-    titulo: 'Master en TypeScript',
-    contenido: 'Muncho contenido sobre TypeScript'
-  }
 
   return (
     <>

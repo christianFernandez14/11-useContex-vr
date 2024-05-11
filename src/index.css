@@ -2,7 +2,7 @@
   margin: 0;
 }
 
-body{
+body {
   background-color: #eee;
 }
 
@@ -34,7 +34,7 @@ body{
 }
 
 /* Trabanjando con el contenido central */
-.content{
+.content {
   width: 70%;
   min-height: 350px;
   background-color: #fff;
@@ -42,5 +42,17 @@ body{
   border: 1px solid #ccc;
   margin: 25px auto;
   padding: 25px;
+}
 
+/*Trabajando con los estilos del login */
+.login input {
+  display: block;
+  margin: 15px;
+  padding: 10px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+.login input[type='submit']{
+  text-transform: capitalize;
 }

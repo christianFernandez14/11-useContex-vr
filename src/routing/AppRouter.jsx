@@ -33,30 +33,22 @@ const AppRouter = () => {
             </li>
             <li>
               <NavLink to="/contacto">Contacto</NavLink>
-            </li>          
-              {
-                usuario.username !== null
-
-                  ? (
-                    <>
-                      <li>
-                        <NavLink to="/">Hola; {usuario.nombre}</NavLink>
-                      </li>
-                      <li>
-                        <a href="#" onClick={e => {
-                          e.preventDefault()
-                          // setiamos el objeto, ya que solo pasando null como valor a la funcion modificadora me genera error
-                          setUsuario({
-                            username: null,
-                            nombre: "christian",
-                            web: "otraweb.cl"
-                          })
-                        }}>Cerrar sesión</a>
-                      </li>
-                    </>
-                  )
-                  : <NavLink to="/login">Login</NavLink>
-              }      
+            </li>
+            {
+              usuario.hasOwnProperty("nick") && usuario.nick !== null
+                ? (<>
+                    <li>
+                      <NavLink to="/">{usuario.nick}</NavLink>
+                    </li>
+                    <li>
+                      <a href="#" onClick={e => {
+                        e.preventDefault()
+                        setUsuario({})
+                      }}>Cerrar sesión</a>
+                    </li>
+                  </>)
+                : <NavLink to="/login">Login</NavLink>
+            }
           </ul>
         </nav>
       </header>
