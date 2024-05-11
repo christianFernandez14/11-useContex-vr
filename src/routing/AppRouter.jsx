@@ -16,7 +16,7 @@ const AppRouter = () => {
         {/* MENU DE NAVEGACIÒN */}
         <nav>
           <div className="logo">
-            <h2>About useContex</h2>
+            <h2>About useContext</h2>
           </div>
           <ul>
             <li>
