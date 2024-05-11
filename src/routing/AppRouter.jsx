@@ -1,5 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { PruebaContext } from '../context/PruebaContext'
 import { Routes, Route, NavLink, BrowserRouter } from "react-router-dom"
+
 import Inicio from '../components/Inicio'
 import Articulos from '../components/Articulos'
 import Contacto from '../components/Contacto'
@@ -7,11 +9,12 @@ import Acerca from '../components/Acerca'
 import Login from '../components/Login'
 
 const AppRouter = () => {
+
+  const { usuario, setUsuario } = useContext(PruebaContext)
+
   return (
-    // Lo que esta dentro de BrowserRouter, es lo que hara funcionar el routing
     <BrowserRouter>
 
-      {/* Lo incluimos dentro de un header para darle estilo a todo del contenedor de header */}
       <header className="header">
         {/* MENU DE NAVEGACIÒN */}
         <nav>
@@ -30,10 +33,30 @@ const AppRouter = () => {
             </li>
             <li>
               <NavLink to="/contacto">Contacto</NavLink>
-            </li>
-            <li>
-              <NavLink to="/login">Login</NavLink>
-            </li>
+            </li>          
+              {
+                usuario.username !== null
+
+                  ? (
+                    <>
+                      <li>
+                        <NavLink to="/">Hola; {usuario.nombre}</NavLink>
+                      </li>
+                      <li>
+                        <a href="#" onClick={e => {
+                          e.preventDefault()
+                          // setiamos el objeto, ya que solo pasando null como valor a la funcion modificadora me genera error
+                          setUsuario({
+                            username: null,
+                            nombre: "christian",
+                            web: "otraweb.cl"
+                          })
+                        }}>Cerrar sesión</a>
+                      </li>
+                    </>
+                  )
+                  : <NavLink to="/login">Login</NavLink>
+              }      
           </ul>
         </nav>
       </header>
